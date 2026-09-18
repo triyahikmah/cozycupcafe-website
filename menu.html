@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Cozy Cup Cafe</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f3ed;
+            color: #3e2c23;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: #fffaf5;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6f4e37;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #4b3621;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #a06b45;
+        }
+
+        /* HEADER */
+        .menu-header {
+            text-align: center;
+            padding: 80px 20px 50px;
+            background-color: #eee2d5;
+        }
+
+        .menu-header h1 {
+            font-size: 45px;
+            color: #4b3621;
+            margin-bottom: 15px;
+        }
+
+        .menu-header p {
+            color: #705c4d;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* MENU */
+        .menu-section {
+            width: 85%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 0;
+        }
+
+        .category {
+            margin-bottom: 60px;
+        }
+
+        .category h2 {
+            text-align: center;
+            color: #5a3e2b;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .menu-card {
+            background-color: #fffaf5;
+            border: 1px solid #eadfd5;
+            padding: 30px;
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(80, 55, 40, 0.10);
+        }
+
+        .menu-card h3 {
+            color: #4b3621;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .menu-card p {
+            color: #806b5d;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .price {
+            color: #9a6544;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #3e2c23;
+            color: #f8f3ed;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #d8c9bd;
+            margin: 5px 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-header h1 {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .menu-header {
+                padding: 60px 20px 40px;
+            }
+
+            .menu-header h1 {
+                font-size: 32px;
+            }
+
+            .menu-header p {
+                font-size: 15px;
+            }
+
+            .menu-section {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+
+        <div class="logo">
+            Cozy Cup Cafe
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="beranda.html">Beranda</a>
+            </li>
+
+            <li>
+                <a href="menu.html">Menu</a>
+            </li>
+
+            <li>
+                <a href="tentang.html">Tentang Kami</a>
+            </li>
+
+            <li>
+                <a href="beranda.html#kontak">Kontak</a>
+            </li>
+
+            <li>
+                <a href="menu.html">Pesan Sekarang</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- HEADER -->
+    <section class="menu-header">
+
+        <h1>
+            Menu Kami
+        </h1>
+
+        <p>
+            Nikmati berbagai pilihan makanan dan minuman
+            yang tersedia di Cozy Cup Cafe.
+        </p>
+
+    </section>
+
+
+    <!-- DAFTAR MENU -->
+    <section class="menu-section">
+
+
+        <!-- COFFEE -->
+        <div class="category">
+
+            <h2>
+                Coffee
+            </h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <h3>Cappuccino</h3>
+                    <p>
+                        Perpaduan espresso, susu steamed,
+                        dan foam yang lembut.
+                    </p>
+                    <span class="price">Rp25.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Caramel Latte</h3>
+                    <p>
+                        Latte creamy dengan tambahan
+                        caramel yang manis dan lembut.
+                    </p>
+                    <span class="price">Rp28.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Americano</h3>
+                    <p>
+                        Espresso dengan tambahan air
+                        yang memiliki rasa kopi yang kuat.
+                    </p>
+                    <span class="price">Rp20.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Cafe Latte</h3>
+                    <p>
+                        Espresso dengan susu steamed
+                        yang creamy dan lembut.
+                    </p>
+                    <span class="price">Rp27.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Mocha</h3>
+                    <p>
+                        Perpaduan espresso, susu, dan
+                        cokelat dengan rasa yang nikmat.
+                    </p>
+                    <span class="price">Rp29.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Espresso</h3>
+                    <p>
+                        Kopi dengan rasa yang kuat
+                        dan aroma yang khas.
+                    </p>
+                    <span class="price">Rp18.000</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NON COFFEE -->
+        <div class="category">
+
+            <h2>
+                Non Coffee
+            </h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <h3>Chocolate Latte</h3>
+                    <p>
+                        Minuman cokelat creamy dengan
+                        rasa manis yang pas.
+                    </p>
+                    <span class="price">Rp25.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Matcha Latte</h3>
+                    <p>
+                        Matcha dengan susu creamy
+                        dan rasa yang lembut.
+                    </p>
+                    <span class="price">Rp27.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Iced Tea</h3>
+                    <p>
+                        Teh dingin yang segar dan
+                        cocok untuk menemani makanan.
+                    </p>
+                    <span class="price">Rp15.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Strawberry Milk</h3>
+                    <p>
+                        Susu dengan rasa strawberry
+                        yang manis dan segar.
+                    </p>
+                    <span class="price">Rp25.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Vanilla Milkshake</h3>
+                    <p>
+                        Milkshake vanilla yang creamy
+                        dengan rasa manis yang lembut.
+                    </p>
+                    <span class="price">Rp28.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Chocolate Milkshake</h3>
+                    <p>
+                        Milkshake cokelat creamy
+                        dengan rasa cokelat yang kuat.
+                    </p>
+                    <span class="price">Rp30.000</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOD -->
+        <div class="category">
+
+            <h2>
+                Food
+            </h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <h3>Chicken Sandwich</h3>
+                    <p>
+                        Roti sandwich dengan isian
+                        ayam dan sayuran segar.
+                    </p>
+                    <span class="price">Rp32.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Beef Burger</h3>
+                    <p>
+                        Burger dengan patty beef,
+                        sayuran, dan saus spesial.
+                    </p>
+                    <span class="price">Rp35.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>French Fries</h3>
+                    <p>
+                        Kentang goreng renyah yang
+                        cocok sebagai makanan pendamping.
+                    </p>
+                    <span class="price">Rp20.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Chicken Pizza</h3>
+                    <p>
+                        Pizza dengan topping ayam,
+                        keju, dan saus tomat.
+                    </p>
+                    <span class="price">Rp38.000</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DESSERT -->
+        <div class="category">
+
+            <h2>
+                Dessert
+            </h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <h3>Tiramisu</h3>
+                    <p>
+                        Dessert lembut dengan rasa
+                        kopi dan cream yang khas.
+                    </p>
+                    <span class="price">Rp30.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Chocolate Cake</h3>
+                    <p>
+                        Kue cokelat lembut dengan
+                        rasa cokelat yang nikmat.
+                    </p>
+                    <span class="price">Rp28.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Cheesecake</h3>
+                    <p>
+                        Kue lembut dengan rasa
+                        keju yang creamy.
+                    </p>
+                    <span class="price">Rp30.000</span>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Chocolate Donut</h3>
+                    <p>
+                        Donat lembut dengan lapisan
+                        cokelat yang manis.
+                    </p>
+                    <span class="price">Rp18.000</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>
+            Cozy Cup Cafe
+        </h3>
+
+        <p>
+            Jl. Mawar No. 10
+        </p>
+
+        <p>
+            Senin - Minggu: 10.00 - 22.00
+        </p>
+
+        <p>
+            cozycupcafe@email.com
+        </p>
+
+    </footer>
+
+</body>
+</html>
