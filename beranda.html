@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Cozy Cup Cafe</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f3ed;
+            color: #3e2c23;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: #fffaf5;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6f4e37;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #4b3621;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #a06b45;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #eee2d5;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            color: #4b3621;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #705c4d;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #6f4e37;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 25px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background-color: #4b3621;
+        }
+
+        /* ABOUT */
+        .about {
+            width: 85%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #5a3e2b;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: #806b5d;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .about-content {
+            background-color: #fffaf5;
+            border: 1px solid #eadfd5;
+            border-radius: 18px;
+            padding: 40px;
+            margin-top: 35px;
+        }
+
+        .about-content p {
+            color: #6f6259;
+            line-height: 1.8;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* FAVORITE MENU */
+        .favorite-menu {
+            background-color: #fffaf5;
+            padding: 80px 8%;
+        }
+
+        .favorite-menu-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .menu-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .menu-card {
+            background-color: #f8f3ed;
+            border: 1px solid #eadfd5;
+            padding: 30px;
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(80, 55, 40, 0.10);
+        }
+
+        .menu-card h3 {
+            color: #4b3621;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .menu-card p {
+            color: #806b5d;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .price {
+            color: #9a6544;
+            font-weight: bold;
+        }
+
+        .see-menu {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .see-menu a {
+            display: inline-block;
+            text-decoration: none;
+            color: #6f4e37;
+            border: 1px solid #6f4e37;
+            padding: 11px 24px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .see-menu a:hover {
+            background-color: #6f4e37;
+            color: white;
+        }
+
+        /* KEUNGGULAN */
+        .features {
+            width: 85%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: #fffaf5;
+            border: 1px solid #eadfd5;
+            padding: 35px 25px;
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(80, 55, 40, 0.10);
+        }
+
+        .feature-card h3 {
+            color: #5a3e2b;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #806b5d;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* PROMO */
+        .promo {
+            background-color: #6f4e37;
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .promo h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .promo p {
+            color: #eee2d8;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .promo-button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #fffaf5;
+            color: #6f4e37;
+            padding: 13px 27px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .promo-button:hover {
+            background-color: #eadfd5;
+        }
+
+        /* KONTAK */
+        .contact {
+            width: 85%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact-box {
+            background-color: #fffaf5;
+            border: 1px solid #eadfd5;
+            border-radius: 18px;
+            padding: 40px;
+            margin-top: 35px;
+        }
+
+        .contact-box p {
+            color: #806b5d;
+            line-height: 1.8;
+            margin: 7px 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #3e2c23;
+            color: #f8f3ed;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #d8c9bd;
+            margin: 5px 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .menu-grid,
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero-content h1 {
+                font-size: 34px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .about-content,
+            .contact-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+
+        <div class="logo">
+            Cozy Cup Cafe
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="beranda.html">Beranda</a>
+            </li>
+
+            <li>
+                <a href="menu.html">Menu</a>
+            </li>
+
+            <li>
+                <a href="tentang.html">Tentang Kami</a>
+            </li>
+
+            <li>
+                <a href="#kontak">Kontak</a>
+            </li>
+
+            <li>
+                <a href="menu.html">Pesan Sekarang</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Temukan Rasa,<br>
+                Nikmati Suasana.
+            </h1>
+
+            <p>
+                Selamat datang di Cozy Cup Cafe, tempat yang nyaman
+                untuk menikmati kopi, makanan, dan waktu santai bersama
+                orang-orang terdekat.
+            </p>
+
+            <a href="menu.html" class="hero-button">
+                Lihat Menu
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- TENTANG CAFE -->
+    <section class="about">
+
+        <h2 class="section-title">
+            Selamat Datang di Cozy Cup Cafe
+        </h2>
+
+        <p class="section-subtitle">
+            Cafe sederhana dengan suasana nyaman dan berbagai pilihan
+            menu yang cocok untuk menemani waktu santai Anda.
+        </p>
+
+        <div class="about-content">
+
+            <p>
+                Cozy Cup Cafe hadir sebagai tempat untuk menikmati
+                secangkir kopi dan makanan favorit dalam suasana yang
+                tenang dan nyaman.
+            </p>
+
+            <p>
+                Kami menyediakan berbagai pilihan coffee, non coffee,
+                makanan, dan dessert yang dapat dinikmati kapan saja.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MENU FAVORIT -->
+    <section class="favorite-menu">
+
+        <div class="favorite-menu-header">
+
+            <h2 class="section-title">
+                Menu Favorit
+            </h2>
+
+            <p class="section-subtitle">
+                Beberapa pilihan yang menjadi favorit pengunjung Cozy Cup Cafe.
+            </p>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+            <div class="menu-card">
+
+                <h3>Cappuccino</h3>
+
+                <p>
+                    Perpaduan espresso, susu steamed, dan foam
+                    yang lembut dengan rasa kopi yang khas.
+                </p>
+
+                <span class="price">
+                    Rp25.000
+                </span>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <h3>Caramel Latte</h3>
+
+                <p>
+                    Latte creamy dengan tambahan caramel yang
+                    memberikan rasa manis dan lembut.
+                </p>
+
+                <span class="price">
+                    Rp28.000
+                </span>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <h3>Chocolate Cake</h3>
+
+                <p>
+                    Kue cokelat lembut dengan rasa cokelat yang
+                    cocok untuk menemani waktu minum kopi.
+                </p>
+
+                <span class="price">
+                    Rp28.000
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="see-menu">
+
+            <a href="menu.html">
+                Lihat Semua Menu
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- KEUNGGULAN -->
+    <section class="features">
+
+        <h2 class="section-title">
+            Kenapa Cozy Cup Cafe?
+        </h2>
+
+        <p class="section-subtitle">
+            Kami berusaha memberikan pengalaman yang nyaman
+            untuk setiap pengunjung.
+        </p>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <h3>Menu Berkualitas</h3>
+
+                <p>
+                    Menggunakan bahan pilihan untuk menghasilkan
+                    makanan dan minuman dengan rasa yang nikmat.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <h3>Suasana Nyaman</h3>
+
+                <p>
+                    Tempat yang cocok untuk bersantai, belajar,
+                    bekerja, atau berkumpul bersama.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <h3>Pelayanan Ramah</h3>
+
+                <p>
+                    Kami memberikan pelayanan yang ramah agar
+                    pengunjung merasa nyaman selama berada di cafe.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
